@@ -45,13 +45,3 @@ class DatabaseConfig():
 
     def __del__(self):
         self.sessionmaker.close_all()
-
-
-if __name__ == '__main__':
-    config = DatabaseConfig('test123')
-    config.set('password', 'password123')
-    print "Password: {}".format(config.get('password'))
-    config.set('username', 'user')
-    config.set('password', 'user12345')
-    config.set('password', 'user123456')
-    print "Password: {}".format(config.get('password'))
